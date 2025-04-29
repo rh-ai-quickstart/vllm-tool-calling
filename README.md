@@ -1,8 +1,12 @@
 # vLLM Tool Calling 
 
 Welcome to the vLLM [Function Calling](https://ai-on-openshift.io/odh-rhoai/enable-function-calling/) Kickstart!  
+
 Use this to quickly get a vLLM runtime with Function Calling enabled in your OpenShift AI environment, loading models directly from ModelCar containers.  
+
 To see how it's done, jump straight to [installation](#install).
+
+## Table of Contents
 
 - [vLLM Tool Calling](#vllm-tool-calling)
 - [1. Description](#1-description)
@@ -111,24 +115,17 @@ oc apply -k vllm-tool-calling/llama3.2-3b
 
 NOTE: To find more patterns and pre-built ModelCar images, take a look at the [Red Hat AI Services ModelCar Catalog repo](https://github.com/redhat-ai-services/modelcar-catalog) on GitHub and the [ModelCar Catalog registry](https://quay.io/repository/redhat-ai-services/modelcar-catalog) on Quay. 
 
-### 6.4 Wait for pods
-
-```
-oc -n ${PROJECT}  get pods -w
-```
-
-```
-(Output)
-NAME                                                   READY   STATUS    RESTARTS   AGE
-llama32-3b-predictor-00001-deployment-77d7955c4-gcwgx   2/2     Running   0          5m
-```
-
-### 7. Test
+### 7. Check the deployment
 
 You can get the OpenShift AI Dashboard URL by:
 ```bash
 oc get routes rhods-dashboard -n redhat-ods-applications
 ```
 
-Once inside the dashboard, naviaget to Data Science Projects -> vllm-tool-calling-demo (or what you called your ${PROJECT} if you changed from default).
+* Once inside the dashboard, navigate to Data Science Projects -> vllm-tool-calling-demo (or what you called your ${PROJECT} if you changed from default):
+
 ![OpenShift AI Projects](assets/images/rhoai-1.png)
+
+* Check the models deployed, and wait until you get the green tick in the Status, meaning that the model is deployed successfully:
+
+![OpenShift AI Projects](assets/images/rhoai-2.png)
