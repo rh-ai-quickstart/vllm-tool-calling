@@ -9,22 +9,21 @@ To see how it's done, jump straight to [installation](#install).
 ## Table of Contents
 
 - [vLLM Tool Calling](#vllm-tool-calling)
-- [1. Description](#1-description)
-- [2. See it in action](#2-see-it-in-action)
-- [3. Architecture diagrams](#3-architecture-diagrams)
-- [4. References](#4-references)
-- [5. Prerequirements](#5-prerequirements)
-    - [5.1 Minimum hardware requirements](#51-minimum-hardware-requirements)
-    - [5.2 Required software](#52-required-software)
-    - [5.3 Required permissions](#53-required-permissions)
-- [6. Install](#6-install)
-    - [6.1 Clone the repository](#61-clone-the-repository)
-    - [6.2 Create the project](#62-create-the-project)
-    - [6.3 Choose your LLM to be deployed](#63-choose-your-llm-to-be-deployed)
-    - [6.4 Wait for pods](#64-wait-for-pods)
-- [7. Test](#7-test)
+- [Detailed description](#detailed-description)
+    - [See it in action](#see-it-in-action)
+    - [Architecture diagrams](#architecture-diagrams)
+    - [References](#references)
+- [Requirements](#requirements)
+    - [Minimum hardware requirements](#minimum-hardware-requirements)
+    - [Required software](#required-software)
+    - [Required permissions](#required-permissions)
+- [Install](#install)
+    - [Clone the repository](#clone-the-repository)
+    - [Create the project](#create-the-project)
+    - [Choose your LLM to be deployed](#choose-your-llm-to-be-deployed)
+    - [Check the deployment](#check-the-deployment)
 
-## 1. Description
+## Detailed description
 
 The vLLM Function Calling Kickstart is a template for deploying vLLM with Function Calling enabled, integrated with ModelCar containerized models, within Red Hat OpenShift AI.
 
@@ -36,15 +35,15 @@ It’s designed for environments where you want to:
 
 Use this project to quickly spin up a powerful vLLM instance ready for function-enabled Agents or AI applications.
 
-## 2. See it in action
+### See it in action
 
 Red Hat uses Arcade software to create interactive demos. Check out [Function Calling Kickstart Example](TBD) to see it live.
 
-## 3. Architecture diagrams
+### Architecture diagrams
 
 ![architecture.png](assets/images/architecture.png)
 
-## 4. References 
+### References 
 
 - The runtime is out of the box in RHOAI called [vLLM ServingRuntime for KServe](https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/2.19/html/serving_models/serving-large-models_serving-large-models#supported-model-serving-runtimes_serving-large-models)
 - Detailed guide and documentations is available in [this article.](https://ai-on-openshift.io/odh-rhoai/enable-function-calling/)
@@ -52,16 +51,16 @@ Red Hat uses Arcade software to create interactive demos. Check out [Function Ca
 
 NOTE: To find more patterns and pre-built ModelCar images, take a look at the [Red Hat AI Services ModelCar Catalog repo](https://github.com/redhat-ai-services/modelcar-catalog) on GitHub and the [ModelCar Catalog registry](https://quay.io/repository/redhat-ai-services/modelcar-catalog) on Quay. 
 
-## 5. Prerequirements
+## Requirements
 
-### 5.1 Minimum hardware requirements
+### Minimum hardware requirements
 
 - 1 GPU required (NVIDIA L40, A10, or similar)
 - 8+ vCPUs
 - 24+ GiB RAM
 - Storage: 30Gi minimum in PVC (larger models may require more)
 
-## 5.2 Required software  
+### Required software  
 
 - Red Hat OpenShift 
 - Red Hat OpenShift AI 2.16+
@@ -69,24 +68,24 @@ NOTE: To find more patterns and pre-built ModelCar images, take a look at the [R
     - Red Hat OpenShift Service Mesh
     - Red Hat OpenShift Serverless
 
-## 5.3 Required permissions
+### Required permissions
 
 - Standard user. No elevated cluster permissions required 
 
-## 6. Install
+## Install
 
 **Please note before you start**
 
 This example was tested on Red Hat OpenShift 4.16.24 & Red Hat OpenShift AI v2.16.2.  
 
-### 6.1 Clone the repository
+### Clone the repository
 
 ```
 git clone https://github.com/rh-ai-kickstart/vllm-tool-calling.git && \
     cd vllm-tool-calling/  
 ```
 
-### 6.2 Create the project
+### Create the project
 
 ```bash
 PROJECT="vllm-tool-calling-demo"
@@ -94,7 +93,7 @@ PROJECT="vllm-tool-calling-demo"
 oc new-project ${PROJECT}
 ```
 
-### 6.3 Choose your LLM to be deployed
+### Choose your LLM to be deployed
 
 * For [Llama3.2-1B](https://huggingface.co/meta-llama/Llama-3.2-1B):
 
@@ -115,7 +114,7 @@ oc apply -k vllm-tool-calling/llama3.2-3b
 ```
 
 
-### 7. Check the deployment
+### Check the deployment
 
 * From the OpenShift Console, go to the App Switcher / Waffle and go to the Red Hat OpenShift AI Console.
 
