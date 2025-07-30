@@ -1,5 +1,9 @@
 # vLLM Tool Calling 
 
+![Ready for publish](https://img.shields.io/badge/ready_for-publish-red)
+![Ready for publish](https://img.shields.io/badge/Source/Authors-AIBU-green)
+
+
 Welcome to the vLLM [Function Calling](https://ai-on-openshift.io/odh-rhoai/enable-function-calling/) Kickstart!  
 
 Use this to quickly get a vLLM runtime with Function Calling enabled in your OpenShift AI environment, loading models directly from ModelCar containers.  
