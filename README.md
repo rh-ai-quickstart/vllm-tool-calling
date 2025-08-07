@@ -115,7 +115,7 @@ MODEL="granite3.2-8b"
 DEVICE="gpu"
 ```
 
-Ensure the corresponding `kustomization.yaml` file's `namespace` matches EXACTLY with the value of `PROJECT` set in the previous step. This ensures the model is deployed in the desired project.
+Update the corresponding `kustomization.yaml` file in the `vllm-tool-calling/${MODEL}/${DEVICE}` folder. `namespace` must match EXACTLY with the value of `PROJECT` set in the previous step to ensure the model is deployed in the desired project.
 
 Deploy the LLM on the target hardware:
 ```bash
