@@ -60,10 +60,13 @@ NOTE: To find more patterns and pre-built ModelCar images, take a look at the [R
 
 ### 5.1 Minimum hardware requirements
 
-- 1 GPU required (NVIDIA L40, A10, or similar)
 - 8+ vCPUs
 - 24+ GiB RAM
 - Storage: 30Gi minimum in PVC (larger models may require more)
+
+#### Optional
+- 1 GPU (NVIDIA L40, A10, or similar)
+- 1 Intel® Gaudi® AI Accelerator
 
 ## 5.2 Required software  
 
@@ -92,30 +95,31 @@ git clone https://github.com/rh-ai-kickstart/vllm-tool-calling.git && \
 
 ### 6.2 Create the project
 
+`PROJECT` can be set to any value.
+
 ```bash
 PROJECT="vllm-tool-calling-demo"
 
 oc new-project ${PROJECT}
 ```
 
-### 6.3 Choose your LLM to be deployed
+### 6.3 Choose your LLM to be deployed and the target hardware
 
-* For [Llama3.2-1B](https://huggingface.co/meta-llama/Llama-3.2-1B):
+Specify your LLM and device:
+- MODEL: select from [[granite3.2-8b](https://huggingface.co/ibm-granite/granite-3.2-8b-instruct), [llama3.2-1b](https://huggingface.co/meta-llama/Llama-3.2-1B), [llama3.2-3b](https://huggingface.co/meta-llama/Llama-3.2-3B)]
+- DEVICE: select from [cpu, gpu, hpu]
 
-```
-oc apply -k vllm-tool-calling/llama3.2-1b
-```
-
-* For [Granite3.2-8B](https://huggingface.co/ibm-granite/granite-3.2-8b-instruct):
-
-```
-oc apply -k vllm-tool-calling/llama3.2-3b
+Set variables to the selected options. Example is shown below.
+```bash
+MODEL="granite3.2-8b"
+DEVICE="gpu"
 ```
 
-* For [Llama3.2-3B](https://huggingface.co/meta-llama/Llama-3.2-3B):
+Ensure the corresponding `kustomization.yaml` file's `namespace` matches EXACTLY with the value of `PROJECT` set in the previous step. This ensures the model is deployed in the desired project.
 
-```
-oc apply -k vllm-tool-calling/llama3.2-3b
+Deploy the LLM on the target hardware:
+```bash
+oc apply -k vllm-tool-calling/${MODEL}/${DEVICE}
 ```
 
 
