@@ -5,8 +5,6 @@ metadata:
     openshift.io/display-name: granite3.2-8b
     serving.knative.openshift.io/enablePassthrough: 'true'
     sidecar.istio.io/inject: 'true'
-    #security.opendatahub.io/enable-auth: 'false'
-    #sidecar.istio.io/inject: 'false'
     sidecar.istio.io/rewriteAppHTTPProbers: 'true'
   name: granite32-8b
   finalizers:

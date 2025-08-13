@@ -25,12 +25,8 @@ spec:
         - /app/data/template/tool_chat_template_granite.jinja
         - '--max-model-len'
         - '128000'
-        - '--gpu-memory-utilization'
-        - '0.85'
-        - '--block-size'
-        - '128'
         - '--dtype'
-        - 'bfloat16'     
+        - 'bfloat16'
       command:
         - python
         - '-m'
