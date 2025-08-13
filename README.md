@@ -111,8 +111,8 @@ Specify your LLM and device:
 
 Set variables to the selected options. Example is shown below.
 ```bash
-MODEL="granite3.2-8b"
-DEVICE="gpu"
+export MODEL="granite3.2-8b"
+export DEVICE="gpu"
 ```
 
 Update the corresponding `kustomization.yaml` file in the `vllm-tool-calling/${MODEL}/${DEVICE}` folder. `namespace` must match EXACTLY with the value of `PROJECT` set in the previous step to ensure the model is deployed in the desired project.
