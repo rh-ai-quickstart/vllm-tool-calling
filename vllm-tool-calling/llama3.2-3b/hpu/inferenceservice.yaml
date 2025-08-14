@@ -2,11 +2,11 @@ apiVersion: serving.kserve.io/v1beta1
 kind: InferenceService
 metadata:
   annotations:
-    openshift.io/display-name: llama3.2-3b
+    openshift.io/display-name: llama3.2-3b-hpu
     serving.knative.openshift.io/enablePassthrough: 'true'
     sidecar.istio.io/inject: 'true'
     sidecar.istio.io/rewriteAppHTTPProbers: 'true'
-  name: llama32-3b
+  name: llama32-3b-hpu
   finalizers:
     - inferenceservice.finalizers
   labels:

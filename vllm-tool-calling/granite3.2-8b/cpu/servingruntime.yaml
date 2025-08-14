@@ -5,8 +5,8 @@ metadata:
     opendatahub.io/apiProtocol: REST
     opendatahub.io/template-display-name: vLLM CPU ServingRuntime for KServe
     opendatahub.io/template-name: vllm-cpu-runtime
-    openshift.io/display-name: granite32-8b
-  name: granite32-8b
+    openshift.io/display-name: granite32-8b-cpu
+  name: granite32-8b-cpu
   labels:
     opendatahub.io/dashboard: 'true'
 spec:

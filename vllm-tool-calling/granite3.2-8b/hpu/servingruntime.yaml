@@ -7,8 +7,8 @@ metadata:
     opendatahub.io/template-display-name: vLLM Intel Gaudi Accelerator ServingRuntime for KServe
     opendatahub.io/accelerator-name: gaudi-hpu-profile
     opendatahub.io/template-name: vllm-gaudi-runtime
-    openshift.io/display-name: granite32-8b
-  name: granite32-8b
+    openshift.io/display-name: granite32-8b-hpu
+  name: granite32-8b-hpu
   labels:
     opendatahub.io/dashboard: 'true'
 spec:

@@ -2,11 +2,11 @@ apiVersion: serving.kserve.io/v1beta1
 kind: InferenceService
 metadata:
   annotations:
-    openshift.io/display-name: granite3.2-8b
+    openshift.io/display-name: granite3.2-8b-cpu
     serving.knative.openshift.io/enablePassthrough: 'true'
     sidecar.istio.io/inject: 'true'
     sidecar.istio.io/rewriteAppHTTPProbers: 'true'
-  name: granite32-8b
+  name: granite32-8b-cpu
   finalizers:
     - inferenceservice.finalizers
   labels:
@@ -28,8 +28,8 @@ spec:
       name: ''
       resources:
         limits:
-          cpu: '6'
-          memory: 16Gi
+          cpu: '8'
+          memory: 20Gi
         requests:
           cpu: '4'
           memory: 8Gi
