@@ -35,5 +35,5 @@ spec:
           cpu: '4'
           memory: 8Gi
           habana.ai/gaudi: '1'
-      runtime: granite32-8b
+      runtime: granite32-8b-hpu
       storageUri: 'oci://quay.io/redhat-ai-services/modelcar-catalog:granite-3.2-8b-instruct'
