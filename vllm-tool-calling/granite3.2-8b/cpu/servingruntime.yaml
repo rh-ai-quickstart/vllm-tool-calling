@@ -2,11 +2,11 @@ apiVersion: serving.kserve.io/v1alpha1
 kind: ServingRuntime
 metadata:
   annotations:
+    opendatahub.io/recommended-accelerators: '["cpu"]'
+    opendatahub.io/runtime-version: v0.7.2
+    openshift.io/display-name: vLLM CPU ServingRuntime for KServe
     opendatahub.io/apiProtocol: REST
-    opendatahub.io/template-display-name: vLLM CPU ServingRuntime for KServe
-    opendatahub.io/template-name: vllm-cpu-runtime
-    openshift.io/display-name: granite32-8b-cpu
-  name: granite32-8b-cpu
+  name: vllm-xeon-runtime-granite32-8b-cpu
   labels:
     opendatahub.io/dashboard: 'true'
 spec:
@@ -34,7 +34,7 @@ spec:
       env:
         - name: HF_HOME
           value: /tmp/hf_home
-      image: public.ecr.aws/q9t5s3a7/vllm-cpu-release-repo:v0.10.0
+      image: public.ecr.aws/q9t5s3a7/vllm-cpu-release-repo:v0.9.1
       name: kserve-container
       ports:
         - containerPort: 8080
