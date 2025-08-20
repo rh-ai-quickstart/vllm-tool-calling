@@ -4,7 +4,7 @@ metadata:
   annotations:
     openshift.io/display-name: granite3.2-8b-cpu
     serving.kserve.io/deploymentMode: RawDeployment
-  name: vllm-xeon-granite32-8b-cpu
+  name: granite32-8b-cpu
   labels:
     opendatahub.io/dashboard: 'true'
 spec:
