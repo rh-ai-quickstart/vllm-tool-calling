@@ -95,10 +95,10 @@ git clone https://github.com/rh-ai-kickstart/vllm-tool-calling.git && \
 
 ### 6.2 Create the project
 
-`PROJECT` can be set to any value.
+`PROJECT` can be set to any value. This will also be used as the namespace.
 
 ```bash
-PROJECT="vllm-tool-calling-demo"
+export PROJECT="vllm-tool-calling-demo"
 
 oc new-project ${PROJECT}
 ```

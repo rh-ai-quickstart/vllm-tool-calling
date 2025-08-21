@@ -44,6 +44,9 @@ spec:
       volumeMounts:
         - mountPath: /dev/shm
           name: shm
+        - mountPath: /app/data/template/
+          name: chat-template-volume
+          subPath: tool_chat_template_granite.jinja
   multiModel: false
   supportedModelFormats:
     - autoSelect: true
@@ -53,3 +56,6 @@ spec:
         medium: Memory
         sizeLimit: 4Gi
       name: shm
+    - name: chat-template-volume
+      configMap:
+        name: chat-template
