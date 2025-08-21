@@ -8,7 +8,7 @@ metadata:
     sidecar.istio.io/rewriteAppHTTPProbers: 'true'
   name: granite32-8b-hpu
   finalizers:
-    - inferenceservice.finalizers
+    - inferenceservice.finalizers.granite32-8b-hpu
   labels:
     opendatahub.io/dashboard: 'true'
 spec:

@@ -64,7 +64,7 @@ NOTE: To find more patterns and pre-built ModelCar images, take a look at the [R
 - 24+ GiB RAM
 - Storage: 30Gi minimum in PVC (larger models may require more)
 
-#### Optional
+#### Optional, depending on selected hardware platform
 - 1 GPU (NVIDIA L40, A10, or similar)
 - 1 Intel® Gaudi® AI Accelerator
 

@@ -26,7 +26,7 @@ spec:
         - '--chat-template'
         - /app/data/template/tool_chat_template_granite.jinja
         - '--max-model-len'
-        - '128000'
+        - '4096'
         - '--dtype'
         - 'bfloat16'
       command:
@@ -51,5 +51,5 @@ spec:
   volumes:
     - emptyDir:
         medium: Memory
-        sizeLimit: 2Gi
+        sizeLimit: 4Gi
       name: shm
