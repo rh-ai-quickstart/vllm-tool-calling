@@ -6,7 +6,7 @@ metadata:
     serving.kserve.io/deploymentMode: RawDeployment
   name: granite32-8b-cpu
   finalizers:
-    - inferenceservice.finalizers.granite32-8b-cpu
+    - inferenceservice.finalizers
   labels:
     opendatahub.io/dashboard: 'true'
 spec:
