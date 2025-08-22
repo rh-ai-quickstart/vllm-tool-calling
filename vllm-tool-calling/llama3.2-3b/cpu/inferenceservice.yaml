@@ -4,7 +4,7 @@ metadata:
   annotations:
     openshift.io/display-name: llama3.2-3b-cpu
     serving.kserve.io/deploymentMode: RawDeployment
-  name: llama3.2-3b-cpu
+  name: llama32-3b-cpu
   labels:
     opendatahub.io/dashboard: 'true'
 spec:
@@ -22,5 +22,5 @@ spec:
         requests:
           cpu: '4'
           memory: 12Gi
-      runtime: llama3.2-3b-cpu
+      runtime: llama32-3b-cpu
       storageUri: 'oci://quay.io/redhat-ai-services/modelcar-catalog:llama-3.2-3b-instruct'
