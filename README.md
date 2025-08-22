@@ -115,7 +115,9 @@ export MODEL="granite3.2-8b"
 export DEVICE="gpu"
 ```
 
-Update the corresponding `kustomization.yaml` file in the `vllm-tool-calling/${MODEL}/${DEVICE}` folder. `namespace` must match EXACTLY with the value of `PROJECT` set in the previous step to ensure the model is deployed in the desired project.
+Update the following files in the `vllm-tool-calling/${MODEL}/${DEVICE}` folder if `PROJECT` is different from `vllm-tool-calling-demo`. The `namespace` field must match EXACTLY with the value of `PROJECT` set in the previous step to ensure the model is deployed in the proper namespace.
+- `kustomization.yaml`
+- (For running on CPU only) `chat-template-configmap.yaml`
 
 Deploy the LLM on the target hardware:
 ```bash

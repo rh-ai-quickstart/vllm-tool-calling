@@ -26,9 +26,7 @@ spec:
         - '--chat-template'
         - /app/data/template/tool_chat_template_granite.jinja
         - '--max-model-len'
-        - '4096'
-        - '--dtype'
-        - 'bfloat16'
+        - '2048'
       command:
         - python
         - '-m'
@@ -44,7 +42,7 @@ spec:
       volumeMounts:
         - mountPath: /dev/shm
           name: shm
-        - mountPath: /app/data/template/
+        - mountPath: /app/data/template/tool_chat_template_granite.jinja
           name: chat-template-volume
           subPath: tool_chat_template_granite.jinja
   multiModel: false

@@ -18,9 +18,9 @@ spec:
       resources:
         limits:
           cpu: '8'
-          memory: 20Gi
+          memory: 64Gi
         requests:
           cpu: '4'
-          memory: 8Gi
+          memory: 16Gi
       runtime: granite32-8b-cpu
       storageUri: 'oci://quay.io/redhat-ai-services/modelcar-catalog:granite-3.2-8b-instruct'
