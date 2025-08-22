@@ -36,7 +36,7 @@ spec:
       env:
         - name: HF_HOME
           value: /tmp/hf_home
-      image: public.ecr.aws/q9t5s3a7/vllm-cpu-release-repo:latest
+      image: 'public.ecr.aws/q9t5s3a7/vllm-cpu-release-repo:latest'
       name: kserve-container
       ports:
         - containerPort: 8080
