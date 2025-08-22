@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: chat-template
-  namespace: ${PROJECT}
+  namespace: vllm-tool-calling-demo
 data:
   tool_chat_template_llama3.2_json.jinja: |
     {{- bos_token }}
