@@ -2,9 +2,9 @@ apiVersion: serving.kserve.io/v1beta1
 kind: InferenceService
 metadata:
   annotations:
-    openshift.io/display-name: llama3.2-3b-cpu
+    openshift.io/display-name: llama3.2-1b-cpu
     serving.kserve.io/deploymentMode: RawDeployment
-  name: llama3.2-3b-cpu
+  name: llama3.2-1b-cpu
   labels:
     opendatahub.io/dashboard: 'true'
 spec:
@@ -18,9 +18,9 @@ spec:
       resources:
         limits:
           cpu: '8'
-          memory: 24Gi
+          memory: 8Gi
         requests:
           cpu: '4'
-          memory: 12Gi
-      runtime: llama3.2-3b-cpu
-      storageUri: 'oci://quay.io/redhat-ai-services/modelcar-catalog:llama-3.2-3b-instruct'
+          memory: 4Gi
+      runtime: llama3.2-1b-cpu
+      storageUri: 'oci://quay.io/redhat-ai-services/modelcar-catalog:llama-3.2-1b-instruct'
