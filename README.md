@@ -107,7 +107,7 @@ oc new-project ${PROJECT}
 
 Specify your LLM and device:
 - MODEL: select from [[granite3.2-8b](https://huggingface.co/ibm-granite/granite-3.2-8b-instruct), [llama3.2-1b](https://huggingface.co/meta-llama/Llama-3.2-1B), [llama3.2-3b](https://huggingface.co/meta-llama/Llama-3.2-3B)]
-- DEVICE: select from [cpu, gpu, hpu]
+- DEVICE: select from [gpu, hpu]
 
 Set variables to the selected options. Example is shown below.
 ```bash
@@ -117,7 +117,6 @@ export DEVICE="gpu"
 
 Update the following files in the `vllm-tool-calling/${MODEL}/${DEVICE}` folder if `PROJECT` is different from `vllm-tool-calling-demo`. The `namespace` field must match EXACTLY with the value of `PROJECT` set in the previous step to ensure the model is deployed in the proper namespace.
 - `kustomization.yaml`
-- (For running on CPU only) `chat-template-configmap.yaml`
 
 Deploy the LLM on the target hardware:
 ```bash
