@@ -4,7 +4,7 @@
 ![Ready for publish](https://img.shields.io/badge/Source/Authors-AIBU-green)
 
 
-Welcome to the vLLM [Function Calling](https://ai-on-openshift.io/odh-rhoai/enable-function-calling/) Kickstart!  
+Welcome to the vLLM [Function Calling](https://ai-on-openshift.io/odh-rhoai/enable-function-calling/) Quickstart!  
 
 Use this to quickly get a vLLM runtime with Function Calling enabled in your OpenShift AI environment, loading models directly from ModelCar containers.  
 
@@ -30,7 +30,7 @@ To see how it's done, jump straight to [installation](#install).
 
 ## 1. Description
 
-The vLLM Function Calling Kickstart is a template for deploying vLLM with Function Calling enabled, integrated with ModelCar containerized models, within Red Hat OpenShift AI.
+The vLLM Function Calling Quickstart is a template for deploying vLLM with Function Calling enabled, integrated with ModelCar containerized models, within Red Hat OpenShift AI.
 
 It’s designed for environments where you want to:
 
@@ -42,7 +42,7 @@ Use this project to quickly spin up a powerful vLLM instance ready for function-
 
 ## 2. See it in action
 
-Red Hat uses Arcade software to create interactive demos. Check out [Function Calling Kickstart Example](TBD) to see it live.
+Red Hat uses Arcade software to create interactive demos. Check out [Function Calling Quickstart Example](TBD) to see it live.
 
 ## 3. Architecture diagrams
 
@@ -86,7 +86,7 @@ This example was tested on Red Hat OpenShift 4.16.24 & Red Hat OpenShift AI v2.1
 ### 6.1 Clone the repository
 
 ```
-git clone https://github.com/rh-ai-kickstart/vllm-tool-calling.git && \
+git clone https://github.com/rh-ai-quickstart/vllm-tool-calling.git && \
     cd vllm-tool-calling/  
 ```
 
