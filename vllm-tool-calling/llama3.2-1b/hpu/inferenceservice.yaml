@@ -2,13 +2,11 @@ apiVersion: serving.kserve.io/v1beta1
 kind: InferenceService
 metadata:
   annotations:
-    openshift.io/display-name: llama3.2-3b
+    openshift.io/display-name: llama3.2-1b-hpu
     serving.knative.openshift.io/enablePassthrough: 'true'
     sidecar.istio.io/inject: 'true'
-    #security.opendatahub.io/enable-auth: 'false'
-    #sidecar.istio.io/inject: 'false'
     sidecar.istio.io/rewriteAppHTTPProbers: 'true'
-  name: llama32-3b
+  name: llama32-1b-hpu
   finalizers:
     - inferenceservice.finalizers
   labels:
@@ -16,7 +14,7 @@ metadata:
 spec:
   predictor:
     annotations:
-      serving.knative.dev/progress-deadline: 60m  
+      serving.knative.dev/progress-deadline: 60m 
     maxReplicas: 1
     minReplicas: 1
     model:
@@ -37,5 +35,5 @@ spec:
           cpu: '4'
           memory: 8Gi
           habana.ai/gaudi: '1'
-      runtime: llama32-3b
-      storageUri: 'oci://quay.io/redhat-ai-services/modelcar-catalog:llama-3.2-3b-instruct'
+      runtime: llama32-1b-hpu
+      storageUri: 'oci://quay.io/redhat-ai-services/modelcar-catalog:llama-3.2-1b-instruct'

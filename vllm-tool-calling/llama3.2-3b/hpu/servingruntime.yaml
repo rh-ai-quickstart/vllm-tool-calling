@@ -7,8 +7,8 @@ metadata:
     opendatahub.io/template-display-name: vLLM Intel Gaudi Accelerator ServingRuntime for KServe
     opendatahub.io/accelerator-name: gaudi-hpu-profile
     opendatahub.io/template-name: vllm-gaudi-runtime
-    openshift.io/display-name: llama32-3b
-  name: llama32-3b
+    openshift.io/display-name: llama32-3b-hpu
+  name: llama32-3b-hpu
   labels:
     opendatahub.io/dashboard: 'true'
 spec:
@@ -40,7 +40,7 @@ spec:
       env:
         - name: HF_HOME
           value: /tmp/hf_home
-      image: quay.io/modh/vllm@sha256:af6a071be36d8a99476f145d1589d7ede97d2760b93335b14ca26de7417e438c
+      image: 'quay.io/modh/vllm@sha256:af6a071be36d8a99476f145d1589d7ede97d2760b93335b14ca26de7417e438c'
       name: kserve-container
       ports:
         - containerPort: 8080
