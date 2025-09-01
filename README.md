@@ -59,13 +59,15 @@ NOTE: To find more patterns and pre-built ModelCar images, take a look at the [R
 
 ### Minimum hardware requirements
 
-- 1 GPU required (NVIDIA L40, A10, or similar)
 - 8+ vCPUs
 - 24+ GiB RAM
 - Storage: 30Gi minimum in PVC (larger models may require more)
 
-### Required software  
+#### Optional, depending on selected hardware platform
+- 1 GPU (NVIDIA L40, A10, or similar)
+- 1 Intel® Gaudi® AI Accelerator
 
+### Required software  
 - Red Hat OpenShift 
 - Red Hat OpenShift AI 2.16+
 - Dependencies for [Single-model server](https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/2.16/html/installing_and_uninstalling_openshift_ai_self-managed/installing-the-single-model-serving-platform_component-install#configuring-automated-installation-of-kserve_component-install):
@@ -91,8 +93,10 @@ git clone https://github.com/rh-ai-quickstart/vllm-tool-calling.git && \
 
 ### Create the project
 
+`PROJECT` can be set to any value. This will also be used as the namespace.
+
 ```bash
-PROJECT="vllm-tool-calling-demo"
+export PROJECT="vllm-tool-calling-demo"
 
 oc new-project ${PROJECT}
 ```
@@ -105,16 +109,22 @@ oc new-project ${PROJECT}
 oc apply -k vllm-tool-calling/llama3.2-1b
 ```
 
-* For [Granite3.2-8B](https://huggingface.co/ibm-granite/granite-3.2-8b-instruct):
+Specify your LLM and device:
+- MODEL: select from [[granite3.2-8b](https://huggingface.co/ibm-granite/granite-3.2-8b-instruct), [llama3.2-1b](https://huggingface.co/meta-llama/Llama-3.2-1B), [llama3.2-3b](https://huggingface.co/meta-llama/Llama-3.2-3B)]
+- DEVICE: select from [gpu, hpu]
 
-```
-oc apply -k vllm-tool-calling/llama3.2-3b
+Set variables to the selected options. Example is shown below.
+```bash
+export MODEL="granite3.2-8b"
+export DEVICE="gpu"
 ```
 
-* For [Llama3.2-3B](https://huggingface.co/meta-llama/Llama-3.2-3B):
+Update the following files in the `vllm-tool-calling/${MODEL}/${DEVICE}` folder if `PROJECT` is different from `vllm-tool-calling-demo`. The `namespace` field must match EXACTLY with the value of `PROJECT` set in the previous step to ensure the model is deployed in the proper namespace.
+- `kustomization.yaml`
 
-```
-oc apply -k vllm-tool-calling/llama3.2-3b
+Deploy the LLM on the target hardware:
+```bash
+oc apply -k vllm-tool-calling/${MODEL}/${DEVICE}
 ```
 
 
