@@ -1,0 +1,26 @@
+apiVersion: serving.kserve.io/v1beta1
+kind: InferenceService
+metadata:
+  annotations:
+    openshift.io/display-name: llama3.2-3b-cpu
+    serving.kserve.io/deploymentMode: RawDeployment
+  name: llama32-3b-cpu
+  labels:
+    opendatahub.io/dashboard: 'true'
+spec:
+  predictor:
+    maxReplicas: 1
+    minReplicas: 1
+    model:
+      modelFormat:
+        name: vLLM
+      name: ''
+      resources:
+        limits:
+          cpu: '8'
+          memory: 24Gi
+        requests:
+          cpu: '4'
+          memory: 12Gi
+      runtime: llama32-3b-cpu
+      storageUri: 'oci://quay.io/redhat-ai-services/modelcar-catalog:llama-3.2-3b-instruct'
